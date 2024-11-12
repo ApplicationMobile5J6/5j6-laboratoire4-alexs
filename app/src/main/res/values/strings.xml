@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AlexSoliman-Labo4</string>
+    <string name="miam_o_pizza">Miam-O-Pizza</string>
+    <string name="miam_o_pizza_labo4">Miam-O-Pizza - Labo4</string>
+    <string name="nom">Entrez votre nom</string>
+    <string name="telephone">Entrez votre telephone</string>
+    <string name="choix">CHOIX DANS LE MENU</string>
 </resources>
