@@ -1,0 +1,86 @@
+[
+  {
+    "numero": "1",
+    "nom": "Polpette",
+    "description": "Saucisse Gaspor avec sauce tomate. Comprend 3 unités.",
+    "categorie": "Entrées",
+    "prix": "7"
+  },
+  {
+    "numero": "2",
+    "nom": "Arancini",
+    "description": "Ragù au boeuf ou au épinard avec ricotta. Comprend 2 unités.",
+    "categorie": "Entrées",
+    "prix": "6"
+  },
+  {
+    "numero": "3",
+    "nom": "César classique",
+    "description": "Pancetta, viandes biologiques (poulet) de Charlevoix, parmesan",
+    "categorie": "Salades",
+    "prix": "12"
+  },
+  {
+    "numero": "4",
+    "nom": "Panzanella",
+    "description": "Tomates cerises, croutons, speck, stracciata di Burrata, radiocchio, topinambours, ricotta, amandes",
+    "categorie": "Salades",
+    "prix": "22"
+  },
+  {
+    "numero": "5",
+    "nom": "Marinara",
+    "description": "Sauce tomate, ail, origan, basilic biologique, huile d'olive, romano",
+    "categorie": "Pizzas",
+    "prix": "9"
+  },
+  {
+    "numero": "6",
+    "nom": "Courgette et ricotta",
+    "description": "Zeste de citron, fior di Latte, huile d'olive, grana padano, poivre noir, basilic",
+    "categorie": "Pizzas",
+    "prix": "13"
+  },
+  {
+    "numero": "7",
+    "nom": "Calzone salami et ricotta",
+    "description": "Viandes biologiques de Charlevoix, fior di Latte, sauce tomate, pecorino, romano, huile d'olive, basilic, poivre noir",
+    "categorie": "Pizzas",
+    "prix": "15"
+  },
+  {
+    "numero": "8",
+    "nom": "Prosciutto",
+    "description": "Huile d'olive, grana padano, origan, mozzarella di Bufala, tomates cerises, roquette",
+    "categorie": "Pizzas",
+    "prix": "17"
+  },
+  {
+    "numero": "9",
+    "nom": "Méditerranéenne",
+    "description": "Sauce tomate, mozzarella, champignons sautés, poivrons rôtis, prosciutto, parmesan",
+    "categorie": "Pizzas",
+    "prix": "16"
+  },
+  {
+    "numero": "10",
+    "nom": "Végétarienne",
+    "description": "Pesto de basilic, kale, mozzarella, oignon caramélisé, tomates rôties",
+    "categorie": "Pizzas",
+    "prix": "15"
+  },
+  {
+    "numero": "11",
+    "nom": "Légumes grillés",
+    "description": "Sauce tomate, aubergine, poivron, courgette, fior di Latte, basilic, huile d'olive, grana padano",
+    "categorie": "Pizzas",
+    "prix": "15"
+  },
+  {
+    "numero": "12",
+    "nom": "Panna cotta",
+    "description": "Fraise du Québec, pistache, fleur de sel, caramel à l'érable",
+    "categorie": "Dessert",
+    "prix": "8"
+  }
+]
