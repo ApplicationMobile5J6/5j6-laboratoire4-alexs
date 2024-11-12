@@ -16,7 +16,7 @@ public class Repas {
         this.prix = prix;
     }
 
-    //Constructeur par default
+    //Constructeur par defaut
     public Repas(){}
 
 
