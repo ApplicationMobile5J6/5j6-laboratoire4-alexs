@@ -1,6 +1,9 @@
 package com.example.alexsoliman_labo4;
 
-public class Repas {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Repas implements Parcelable {
     private int noRepas;
     private String nom;
     private String description;
@@ -16,9 +19,8 @@ public class Repas {
         this.prix = prix;
     }
 
-    //Constructeur par defaut
-    public Repas(){}
-
+    // Constructeur par defaut
+    public Repas() {}
 
     // Getters et setters
     public int getNoRepas() { return noRepas; }
@@ -35,4 +37,48 @@ public class Repas {
 
     public double getPrix() { return prix; }
     public void setPrix(double prix) { this.prix = prix; }
+
+
+
+    // Parcleable
+    protected Repas(Parcel in) {
+        noRepas = in.readInt();
+        nom = in.readString();
+        description = in.readString();
+        categorie = in.readString();
+        prix = in.readDouble();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(noRepas);
+        dest.writeString(nom);
+        dest.writeString(description);
+        dest.writeString(categorie);
+        dest.writeDouble(prix);
+    }
+
+    public static final Parcelable.Creator<Repas> CREATOR = new Parcelable.Creator<Repas>() {
+        @Override
+        public Repas createFromParcel(Parcel in) {
+            return new Repas(in);
+        }
+
+        @Override
+        public Repas[] newArray(int size) {
+            return new Repas[size];
+        }
+
+    };
+
+    @Override
+    public String toString() {
+        return nom;
+    }
 }

@@ -5,4 +5,14 @@
     <string name="nom">Entrez votre nom</string>
     <string name="telephone">Entrez votre telephone</string>
     <string name="choix">CHOIX DANS LE MENU</string>
+    <string name="commande_pour">Commande pour :</string>
+    <string name="nom_du_client">Nom du client</string>
+    <string name="telephone2">telephone</string>
+    <string name="menu">Menu - Miam-O-Pizza</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="categorie">categorie</string>
+    <string name="description">description</string>
+    <string name="prix">prix</string>
+    <string name="bouttonCommande">COMMANDER LE REPAS SELECTIONNE</string>
 </resources>
