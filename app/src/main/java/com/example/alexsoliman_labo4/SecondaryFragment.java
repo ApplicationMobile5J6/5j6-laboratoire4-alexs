@@ -4,41 +4,52 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the  factory method to
- * create an instance of this fragment.
- */
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
 public class SecondaryFragment extends Fragment {
-    View vue;
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
-
-    // TODO: Rename and change types of parameters
-
-
-    public SecondaryFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment SecondaryFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+    private RepasViewModel repasViewModel;
+    private TextView tv_categorie, tv_price, tv_description;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        vue = inflater.inflate(R.layout.fragment_secondary, container, false);
+        View vue = inflater.inflate(R.layout.fragment_secondary, container, false);
+
+        // Initialize the TextViews
+        tv_categorie = vue.findViewById(R.id.tv_categorie);
+        tv_price = vue.findViewById(R.id.tv_price);
+        tv_description = vue.findViewById(R.id.tv_description);
+
         return vue;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // Initialize the ViewModel
+        repasViewModel = new ViewModelProvider(requireActivity()).get(RepasViewModel.class);
+
+        // Observe the selectedRepas LiveData
+        repasViewModel.getSelectedRepas().observe(getViewLifecycleOwner(), new Observer<Repas>() {
+            @Override
+            public void onChanged(Repas repas) {
+                if (repas != null) {
+                    // Update the TextViews with the selected Repas data
+                    tv_categorie.setText(repas.getCategorie());
+                    tv_price.setText(String.valueOf(repas.getPrix()));
+                    tv_description.setText(repas.getDescription());
+                }
+            }
+        });
     }
 }
