@@ -24,7 +24,6 @@ public class SecondaryFragment extends Fragment {
                              Bundle savedInstanceState) {
         View vue = inflater.inflate(R.layout.fragment_secondary, container, false);
 
-        // Initialize the TextViews
         tv_categorie = vue.findViewById(R.id.tv_categorie);
         tv_price = vue.findViewById(R.id.tv_price);
         tv_description = vue.findViewById(R.id.tv_description);
@@ -33,18 +32,17 @@ public class SecondaryFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onViewCreated(View vue, Bundle savedInstanceState) {
+        super.onViewCreated(vue, savedInstanceState);
 
-        // Initialize the ViewModel
+
         repasViewModel = new ViewModelProvider(requireActivity()).get(RepasViewModel.class);
 
-        // Observe the selectedRepas LiveData
+
         repasViewModel.getSelectedRepas().observe(getViewLifecycleOwner(), new Observer<Repas>() {
             @Override
             public void onChanged(Repas repas) {
                 if (repas != null) {
-                    // Update the TextViews with the selected Repas data
                     tv_categorie.setText(repas.getCategorie());
                     tv_price.setText(String.valueOf(repas.getPrix()));
                     tv_description.setText(repas.getDescription());

@@ -32,7 +32,7 @@ public class MainFragment extends Fragment {
         if (getArguments() != null) {
             repasList = getArguments().getParcelableArrayList(ARG_REPAS_LIST);
         }
-        // Initialize the ViewModel
+
         repasViewModel = new ViewModelProvider(requireActivity()).get(RepasViewModel.class);
     }
 
@@ -54,17 +54,17 @@ public class MainFragment extends Fragment {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spn_menu.setAdapter(adapter);
 
-            // Set an item selected listener to update the ViewModel
+
             spn_menu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     Repas selectedRepas = (Repas) parent.getItemAtPosition(position);
-                    repasViewModel.selectRepas(selectedRepas); // Update the ViewModel with the selected item
+                    repasViewModel.selectRepas(selectedRepas);
                 }
 
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
-                    // Do nothing
+
                 }
             });
         }

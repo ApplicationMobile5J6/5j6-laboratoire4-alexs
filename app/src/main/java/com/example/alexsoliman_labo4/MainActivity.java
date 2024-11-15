@@ -22,6 +22,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 public class MainActivity extends AppCompatActivity {
     Button btn_choix;
     EditText et_nom, et_phone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         btn_choix = findViewById(R.id.btn_choix);
         et_nom = findViewById(R.id.et_nom);
         et_phone = findViewById(R.id.et_phone);
+
         btn_choix.setOnClickListener(v -> {
 
             String nom = et_nom.getText().toString().trim();
@@ -98,10 +100,13 @@ public class MainActivity extends AppCompatActivity {
             }
             eventType = parser.next();
         }
+        String nom = et_nom.getText().toString().trim();
+        String phone = et_phone.getText().toString().trim();
 
         Intent intent = new Intent(MainActivity.this, InterfaceCommande.class);
         intent.putParcelableArrayListExtra("repasList", repasList);
-
+        intent.putExtra("nom", nom);
+        intent.putExtra("phone", phone);
         startActivity(intent);
 
     }
